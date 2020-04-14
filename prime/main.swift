@@ -2,19 +2,19 @@ import Foundation
 
 extension Int {
     var isPrime: Bool {
-        if self < 3 {
-            return true
+        if self <= 3 {
+            return self > 1
         }
-        if self == 4 {
+        if self % 2 == 0 || self % 3 == 0 {
             return false
         }
-        if self == 5 {
-            return true
-        }
-        for i in stride(from: 3, to: Int(sqrt(Double(self))) + 1, by: 2) {
-            if self % i == 0 {
+        var i = 5
+
+        while i * i <= self {
+            if self % i == 0 || self % (i + 2) == 0 {
                 return false
             }
+            i += 6
         }
         return true
     }
