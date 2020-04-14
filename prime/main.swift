@@ -11,7 +11,7 @@ extension Int {
         if self == 5 {
             return true
         }
-        for i in 2..<(Int(sqrt(Double(self))) + 1) {
+        for i in stride(from: 3, to: Int(sqrt(Double(self))) + 1, by: 2) {
             if self % i == 0 {
                 return false
             }
