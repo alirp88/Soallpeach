@@ -20,9 +20,10 @@ extension Int {
     }
 }
 
-let data = try String(contentsOfFile: CommandLine.arguments[1])
-
-for line in data.components(separatedBy: .newlines) {
+if freopen(CommandLine.arguments[1], "r", stdin) == nil {
+    exit(-1)
+}
+while let line = readLine() {
     guard let i = Int(line) else {
         continue
     }
