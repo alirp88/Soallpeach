@@ -34,4 +34,4 @@ COPY --from=build /usr/lib/swift/ /usr/lib/swift/
 #COPY --from=build /build/Public /run/Public
 
 ENTRYPOINT ["./Run"]
-CMD ["serve", "--env", "production", "--hostname", "0.0.0.0"]
+CMD ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "80"]
