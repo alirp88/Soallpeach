@@ -1,5 +1,5 @@
 import Vapor
-let dispatchQueue = DispatchQueue(label: "")
+let dispatchQueue = DispatchQueue(label: "LockCount")
 var privateCount = 0
 var count: Int {
     get {
